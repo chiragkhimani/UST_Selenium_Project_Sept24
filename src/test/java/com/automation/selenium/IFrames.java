@@ -1,17 +1,14 @@
-package com.automation.class01;
+package com.automation.selenium;
 
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
-public class DragAndDrop {
+public class IFrames {
     public static void main(String[] args) {
-
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.globalsqa.com/demo-site/draganddrop/");
 
@@ -19,13 +16,8 @@ public class DragAndDrop {
         driver.switchTo().frame(iframe);
 
         List<WebElement> listOfImages = driver.findElements(By.xpath("//ul[@id='gallery']/li"));
+        System.out.println(listOfImages.size());
 
-        WebElement target = driver.findElement(By.id("trash"));
-        Actions actions = new Actions(driver);
-
-        for (WebElement image : listOfImages) {
-            actions.dragAndDrop(image, target).pause(1000).build().perform();
-        }
-
+        driver.switchTo().defaultContent();
     }
 }
