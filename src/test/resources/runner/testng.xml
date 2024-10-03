@@ -8,9 +8,17 @@
         </run>
     </groups>
 
+    <listeners>
+        <listener class-name="com.automation.testng.Listeners"></listener>
+    </listeners>
+
+    <parameter name="username" value="chrome"></parameter>
+    <parameter name="password" value="chrome"></parameter>
+
     <test name="LoginAndLogoutTest">
         <classes>
             <class name="com.automation.testng.LoginTest"/>
+            <class name="com.automation.testng.ParametersTest"/>
         </classes>
     </test>
 

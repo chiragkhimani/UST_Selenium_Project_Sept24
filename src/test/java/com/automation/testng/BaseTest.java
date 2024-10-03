@@ -7,13 +7,13 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeGroups(groups = {"Smoke","Regression"})
     public void setUp() {
-        System.out.println("Before Test");
+        System.out.println("Before Group");
     }
 
-    @AfterTest(alwaysRun = true)
+    @AfterGroups(groups = "Smoke")
     public void cleanUp() {
-        System.out.println("After Test");
+        System.out.println("After Group");
     }
 }

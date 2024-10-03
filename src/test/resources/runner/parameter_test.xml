@@ -2,25 +2,14 @@
 
 <suite name="Regression Test" verbose="1">
 
-    <groups>
-        <run>
-            <include name="Smoke"></include>
-        </run>
-    </groups>
 
-    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="username" value="admin"/>
+    <parameter name="password" value="admin@123"/>
 
     <test name="LoginAndLogoutTest">
         <classes>
-            <class name="com.automation.testng.LoginTest"/>
             <class name="com.automation.testng.ParametersTest"/>
         </classes>
     </test>
 
-    <test name="OrderProcessing">
-        <classes>
-            <class name="com.automation.testng.OrderConfirmationTest"/>
-            <class name="com.automation.testng.CartPageTest"/>
-        </classes>
-    </test>
 </suite>
