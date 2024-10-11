@@ -1,9 +1,12 @@
 package com.automation.cucumber;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.List;
 
 public class StepDefinition {
 
@@ -27,10 +30,6 @@ public class StepDefinition {
 
     }
 
-    @When("user login with invalid credentials")
-    public void userLoginWithInvalidCredentials() {
-
-    }
 
     @Then("verify invalid login error message is displayed")
     public void verifyInvalidLoginErrorMessageIsDisplayed() {
@@ -91,5 +90,16 @@ public class StepDefinition {
 
     @Then("verify user is on order confirmation page")
     public void verifyUserIsOnOrderConfirmationPage() {
+    }
+
+    @When("user login with username {string} and password {string}")
+    public void userLoginWithUsernameAndPassword(String username, String password) {
+        System.out.println(username);
+        System.out.println(password);
+    }
+
+    @Then("verify list of below username displays on login page")
+    public void verifyListOfBelowUsernameDisplaysOnLoginPage(List<List<String>> listOfUsers) {
+
     }
 }
